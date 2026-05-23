@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía práctica: GitHub con colaboradores, consola, Desktop y Mobile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <span class="badge">📘 Guía práctica para estudiantes</span>
+      <h1>Trabajo colaborativo en GitHub: ramas, archivos y Pull Request</h1>
+      <p>
+        En esta guía aprenderás a agregar colaboradores a un proyecto de GitHub y a trabajar en equipo usando tres formas:
+        <strong>consola / Git Bash</strong>, <strong>GitHub Desktop</strong> y <strong>GitHub Mobile</strong>.
+        Cada estudiante debe crear su propia rama, subir un archivo y enviar un Pull Request para que el dueño del repositorio lo revise.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#flujo">Ver flujo general</a>
+        <a class="btn" href="#consola">Consola</a>
+        <a class="btn" href="#desktop">GitHub Desktop</a>
+        <a class="btn green" href="#mobile">GitHub Mobile</a>
+        <a class="btn" href="#actividad">Actividad evaluada</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="container">
+    <a href="#objetivo">Objetivo</a>
+    <a href="#flujo">Flujo</a>
+    <a href="#colaboradores">Agregar colaboradores</a>
+    <a href="#consola">Consola</a>
+    <a href="#desktop">Desktop</a>
+    <a href="#mobile">Mobile</a>
+    <a href="#pr">Pull Request</a>
+    <a href="#actividad">Actividad</a>
+    <a href="#rubrica">Rúbrica</a>
+    <a href="#fuentes">Fuentes</a>
+  </div>
+</nav>
+
+<main>
+  <section id="objetivo">
+    <div class="container grid">
+      <div class="card full">
+        <div class="section-title"><span class="num">1</span><h2>Objetivo de la práctica</h2></div>
+        <p>
+          Que los estudiantes aprendan el flujo básico de colaboración en GitHub: ser agregados como colaboradores,
+          crear una rama propia, realizar cambios sin afectar la rama principal, subir sus archivos y solicitar revisión
+          por medio de un Pull Request.
+        </p>
+        <div class="alert success">
+          <strong>Resultado esperado:</strong> al finalizar, cada estudiante tendrá una rama con su nombre, un archivo agregado
+          al repositorio y un Pull Request creado correctamente.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flujo">
+    <div class="container grid">
+      <div class="card full">
+        <div class="section-title"><span class="num">2</span><h2>Flujo general de trabajo</h2></div>
+        <img class="visual" src="assets/workflow.svg" alt="Diagrama del flujo de trabajo con GitHub: repositorio, ramas y Pull Request">
+        <ol>
+          <li>El dueño crea el repositorio y agrega a sus compañeros como colaboradores.</li>
+          <li>Cada colaborador clona el repositorio o lo abre desde GitHub Desktop.</li>
+          <li>Cada estudiante crea una rama con su nombre o tarea.</li>
+          <li>El estudiante agrega o modifica un archivo.</li>
+          <li>Realiza commit y sube la rama a GitHub.</li>
+          <li>Crea un Pull Request para solicitar que sus cambios sean revisados.</li>
+          <li>El dueño o revisor revisa, comenta, solicita cambios o aprueba.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="colaboradores">
+    <div class="container grid">
+      <div class="card">
+        <div class="section-title"><span class="num">3</span><h2>Agregar colaboradores</h2></div>
+        <p>Este paso lo realiza el dueño del repositorio.</p>
+        <div class="step"><strong>1</strong><div>Entrar a GitHub y abrir el repositorio del proyecto.</div></div>
+        <div class="step"><strong>2</strong><div>Entrar a <span class="inline-code">Settings</span>.</div></div>
+        <div class="step"><strong>3</strong><div>Buscar la opción <span class="inline-code">Collaborators</span> o <span class="inline-code">Collaborators and teams</span>.</div></div>
+        <div class="step"><strong>4</strong><div>Presionar <span class="inline-code">Add people</span> y escribir el usuario o correo de GitHub del compañero.</div></div>
+        <div class="step"><strong>5</strong><div>El colaborador debe aceptar la invitación desde su correo o notificación de GitHub.</div></div>
+      </div>
+      <div class="card">
+        <h3>Roles recomendados</h3>
+        <img class="visual" src="assets/roles.svg" alt="Roles en el trabajo colaborativo: dueño, colaborador y revisor">
+        <ul>
+          <li><strong>Dueño:</strong> crea el repositorio, invita colaboradores y revisa Pull Requests.</li>
+          <li><strong>Colaborador:</strong> crea una rama, sube su archivo y solicita revisión.</li>
+          <li><strong>Revisor:</strong> comenta, aprueba o solicita correcciones.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="consola">
+    <div class="container grid">
+      <div class="card">
+        <div class="section-title"><span class="num">4</span><h2>Opción A: hacerlo desde consola o Git Bash</h2></div>
+        <img class="visual" src="assets/console.svg" alt="Ilustración de comandos Git en consola">
+        <p>Esta opción es ideal para que los estudiantes practiquen comandos básicos de Git.</p>
+      </div>
+      <div class="card">
+        <h3>Comandos paso a paso</h3>
+        <p><strong>1. Clonar el repositorio</strong></p>
+        <pre><code>git clone URL_DEL_REPOSITORIO
+cd nombre-del-repositorio</code></pre>
+        <p><strong>2. Crear una rama propia</strong></p>
+        <pre><code>git checkout -b nombre-estudiante</code></pre>
+        <p><strong>Ejemplo:</strong></p>
+        <pre><code>git checkout -b ana-presentacion</code></pre>
+        <p><strong>3. Crear o copiar el archivo</strong></p>
+        <pre><code>echo "Hola, soy Ana y este es mi aporte" &gt; ana.html</code></pre>
+        <p><strong>4. Verificar cambios</strong></p>
+        <pre><code>git status</code></pre>
+        <p><strong>5. Agregar y guardar cambios</strong></p>
+        <pre><code>git add .
+git commit -m "Agrego archivo de Ana"</code></pre>
+        <p><strong>6. Subir la rama a GitHub</strong></p>
+        <pre><code>git push -u origin ana-presentacion</code></pre>
+      </div>
+      <div class="card full">
+        <div class="alert">
+          <strong>Importante:</strong> no trabajar directamente en <span class="inline-code">main</span> o <span class="inline-code">master</span>.
+          Cada estudiante debe trabajar en su propia rama para evitar conflictos.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="desktop">
+    <div class="container grid">
+      <div class="card">
+        <div class="section-title"><span class="num">5</span><h2>Opción B: hacerlo desde GitHub Desktop</h2></div>
+        <img class="visual" src="assets/desktop.svg" alt="Ilustración de GitHub Desktop con rama y Pull Request">
+        <p>GitHub Desktop permite trabajar con Git de forma visual, sin escribir tantos comandos.</p>
+      </div>
+      <div class="card">
+        <h3>Pasos desde GitHub Desktop</h3>
+        <div class="step"><strong>1</strong><div>Instalar GitHub Desktop e iniciar sesión con la cuenta de GitHub.</div></div>
+        <div class="step"><strong>2</strong><div>Ir a <span class="inline-code">File → Clone repository</span> y seleccionar el repositorio compartido.</div></div>
+        <div class="step"><strong>3</strong><div>Presionar <span class="inline-code">Current Branch</span> y luego <span class="inline-code">New Branch</span>.</div></div>
+        <div class="step"><strong>4</strong><div>Escribir el nombre de la rama, por ejemplo: <span class="inline-code">maria-aporte</span>.</div></div>
+        <div class="step"><strong>5</strong><div>Agregar el archivo en la carpeta del proyecto desde el explorador de archivos.</div></div>
+        <div class="step"><strong>6</strong><div>Volver a GitHub Desktop, escribir un resumen del cambio y presionar <span class="inline-code">Commit to rama</span>.</div></div>
+        <div class="step"><strong>7</strong><div>Presionar <span class="inline-code">Publish branch</span> para subir la rama a GitHub.</div></div>
+        <div class="step"><strong>8</strong><div>Presionar <span class="inline-code">Create Pull Request</span> para solicitar revisión.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mobile">
+    <div class="container grid">
+      <div class="card mobile-card">
+        <div class="section-title"><span class="num">6</span><h2>Opción C: usar GitHub Mobile</h2></div>
+        <img class="visual" src="assets/mobile.svg" alt="Ilustración de GitHub Mobile revisando Pull Requests">
+        <p>
+          GitHub Mobile es útil para trabajar desde el celular, especialmente para revisar Pull Requests,
+          recibir notificaciones, comentar cambios, aprobar revisiones y hacer correcciones pequeñas.
+        </p>
+        <div class="alert mobile-note">
+          <strong>Recomendación para clase:</strong> usar GitHub Mobile como apoyo para revisión y seguimiento.
+          Para subir muchos archivos o trabajar con carpetas completas, es más cómodo usar consola o GitHub Desktop.
+        </div>
+      </div>
+      <div class="card">
+        <h3>Instalación y acceso</h3>
+        <div class="step"><strong>1</strong><div>Instalar la app oficial <strong>GitHub Mobile</strong> desde App Store o Google Play.</div></div>
+        <div class="step"><strong>2</strong><div>Iniciar sesión con la cuenta de GitHub.</div></div>
+        <div class="step"><strong>3</strong><div>Buscar el repositorio del proyecto desde la pestaña de búsqueda o perfil.</div></div>
+        <div class="step"><strong>4</strong><div>Activar notificaciones del repositorio con <span class="inline-code">Watch</span> para recibir avisos de Pull Requests.</div></div>
+      </div>
+      <div class="card">
+        <h3>Crear Pull Request desde GitHub Mobile</h3>
+        <p>Cuando la rama ya fue subida desde consola o GitHub Desktop, también se puede crear el Pull Request desde el celular.</p>
+        <div class="step"><strong>1</strong><div>Abrir el repositorio en GitHub Mobile.</div></div>
+        <div class="step"><strong>2</strong><div>Tocar el botón <span class="inline-code">+</span> desde la vista del repositorio o Pull Requests.</div></div>
+        <div class="step"><strong>3</strong><div>Seleccionar la rama que contiene los cambios.</div></div>
+        <div class="step"><strong>4</strong><div>Revisar los archivos modificados antes de enviarlo.</div></div>
+        <div class="step"><strong>5</strong><div>Escribir título y descripción clara, por ejemplo: <em>Agrego archivo de María</em>.</div></div>
+        <div class="step"><strong>6</strong><div>Crear el Pull Request para que el dueño del repositorio lo revise.</div></div>
+      </div>
+      <div class="card">
+        <h3>Revisar y comentar desde GitHub Mobile</h3>
+        <div class="step"><strong>1</strong><div>Entrar a <span class="inline-code">Pull Requests</span>.</div></div>
+        <div class="step"><strong>2</strong><div>Abrir el Pull Request de un compañero.</div></div>
+        <div class="step"><strong>3</strong><div>Leer la descripción y revisar los archivos cambiados.</div></div>
+        <div class="step"><strong>4</strong><div>Escribir un comentario si hay algo que corregir.</div></div>
+        <div class="step"><strong>5</strong><div>Si tienes permiso, aprobar, solicitar cambios o unir el Pull Request.</div></div>
+      </div>
+      <div class="card full">
+        <h3>Trabajo desde celular usando navegador</h3>
+        <p>
+          Si un estudiante no tiene computadora, puede intentar trabajar desde el navegador del celular entrando a
+          <span class="inline-code">github.com</span>. En algunos celulares conviene activar <strong>sitio de escritorio</strong>
+          para ver mejor las opciones de ramas, edición de archivos y creación del Pull Request.
+        </p>
+        <div class="alert danger">
+          <strong>Advertencia:</strong> para proyectos con varios archivos, carpetas o imágenes pesadas, el celular puede ser incómodo.
+          Lo más recomendable es que GitHub Mobile sea usado para revisar, comentar y crear Pull Requests desde ramas ya subidas.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pr">
+    <div class="container grid">
+      <div class="card full">
+        <div class="section-title"><span class="num">7</span><h2>Crear el Pull Request</h2></div>
+        <p>El Pull Request es la solicitud para que los cambios de una rama se revisen antes de unirlos a la rama principal.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Elemento</th><th>Qué debe colocar el estudiante</th><th>Ejemplo</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Base branch</td><td>Rama principal donde se unirán los cambios</td><td><span class="inline-code">main</span></td></tr>
+              <tr><td>Compare branch</td><td>Rama del estudiante</td><td><span class="inline-code">ana-presentacion</span></td></tr>
+              <tr><td>Título</td><td>Resumen breve del trabajo realizado</td><td>Agrego archivo de Ana</td></tr>
+              <tr><td>Descripción</td><td>Explicación de lo que se agregó</td><td>Subí mi archivo HTML con mi aporte al proyecto.</td></tr>
+              <tr><td>Revisor</td><td>Dueño del repositorio o docente</td><td>Profesor / coordinador del equipo</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Descripción sugerida para el Pull Request</h3>
+        <pre><code>## Descripción
+Agregué mi archivo personal al proyecto.
+
+## Cambios realizados
+- Creé mi rama de trabajo.
+- Agregué el archivo ana.html.
+- Subí los cambios al repositorio.
+
+## Solicitud
+Solicito revisión para unir mis cambios a la rama main.</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="actividad">
+    <div class="container grid">
+      <div class="card full">
+        <div class="section-title"><span class="num">8</span><h2>Actividad práctica para estudiantes</h2></div>
+        <p><strong>Modalidad:</strong> trabajo grupal de 4 a 5 estudiantes.</p>
+        <p><strong>Producto final:</strong> repositorio en GitHub con un archivo por estudiante y Pull Requests revisados.</p>
+        <ol>
+          <li>Un estudiante crea el repositorio llamado <span class="inline-code">practica-github-equipo</span>.</li>
+          <li>El dueño agrega a sus compañeros como colaboradores.</li>
+          <li>Cada colaborador crea una rama con su nombre.</li>
+          <li>Cada estudiante crea un archivo con su nombre, por ejemplo: <span class="inline-code">maria.html</span>, <span class="inline-code">juan.html</span>.</li>
+          <li>Dentro del archivo debe escribir una pequeña presentación personal y el rol que tuvo en el equipo.</li>
+          <li>Cada estudiante debe hacer commit y subir su rama.</li>
+          <li>Cada estudiante debe crear un Pull Request.</li>
+          <li>El dueño o revisor debe comentar o aprobar cada Pull Request.</li>
+          <li>Al final, deben unir los Pull Requests a <span class="inline-code">main</span>.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Archivo de ejemplo</h3>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Aporte de Ana&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hola, soy Ana&lt;/h1&gt;
+  &lt;p&gt;Mi aporte fue crear mi rama y subir este archivo.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+      <div class="card">
+        <h3>Lista de cotejo</h3>
+        <ul class="checklist">
+          <li>El estudiante aceptó la invitación como colaborador.</li>
+          <li>Creó una rama con nombre claro.</li>
+          <li>Agregó su archivo correctamente.</li>
+          <li>Realizó commit con mensaje descriptivo.</li>
+          <li>Subió su rama a GitHub.</li>
+          <li>Creó el Pull Request.</li>
+          <li>Participó en revisión o comentario de un PR.</li>
+          <li>Usó GitHub Mobile para revisar, comentar o dar seguimiento.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="rubrica">
+    <div class="container grid">
+      <div class="card full">
+        <div class="section-title"><span class="num">9</span><h2>Rúbrica de evaluación — 10 puntos</h2></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Criterio</th><th>Puntaje</th><th>Descripción</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Colaboración en GitHub</td><td>2 pts</td><td>Acepta invitación, identifica el repositorio y participa correctamente.</td></tr>
+              <tr><td>Creación de rama</td><td>2 pts</td><td>Crea una rama propia con nombre claro y no trabaja directamente en main.</td></tr>
+              <tr><td>Archivo agregado</td><td>2 pts</td><td>Agrega un archivo con contenido correcto y relacionado con la actividad.</td></tr>
+              <tr><td>Commit y push</td><td>2 pts</td><td>Realiza commit con mensaje claro y sube correctamente la rama.</td></tr>
+              <tr><td>Pull Request y revisión</td><td>2 pts</td><td>Crea el Pull Request y participa en revisión, comentario o seguimiento desde web, Desktop o Mobile.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="errores">
+    <div class="container grid">
+      <div class="card third">
+        <h3>Error: estoy en main</h3>
+        <p>Crea una rama antes de modificar archivos:</p>
+        <pre><code>git checkout -b mi-rama</code></pre>
+      </div>
+      <div class="card third">
+        <h3>Error: no puedo subir</h3>
+        <p>Verifica que aceptaste la invitación como colaborador y que tienes permiso de escritura.</p>
+      </div>
+      <div class="card third">
+        <h3>Error: hay conflictos</h3>
+        <p>Actualiza tu rama con la principal y revisa los archivos marcados como conflicto antes de hacer commit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fuentes">
+    <div class="container grid">
+      <div class="card full">
+        <div class="section-title"><span class="num">10</span><h2>Fuentes recomendadas para estudiar</h2></div>
+        <ul>
+          <li><a href="https://docs.github.com/en/get-started/using-github/github-mobile" target="_blank" rel="noopener">GitHub Docs — GitHub Mobile</a></li>
+          <li><a href="https://github.blog/changelog/2025-01-21-create-pull-request-from-an-existing-branch-on-github-mobile/" target="_blank" rel="noopener">GitHub Blog — Crear Pull Request desde una rama existente en GitHub Mobile</a></li>
+          <li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository" target="_blank" rel="noopener">GitHub Docs — Crear y eliminar ramas</a></li>
+          <li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request" target="_blank" rel="noopener">GitHub Docs — Crear un Pull Request</a></li>
+          <li><a href="https://git-scm.com/docs" target="_blank" rel="noopener">Git Documentation — Comandos básicos de Git</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p><strong>Guía práctica elaborada para clase.</strong> Puede adaptarse según el nivel del grupo y el tiempo disponible.</p>
+    <p class="small">Sugerencia docente: antes de la práctica, confirmar que todos los estudiantes tengan cuenta de GitHub y acceso a su correo.</p>
+  </div>
+</footer>
+
+</body>
+</html>
